@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User, Group
+from .models import Customer, Lawyer, Contract
 from rest_framework import viewsets
-from project.api.serializers import UserSerializer, GroupSerializer
+from project.api.serializers import UserSerializer, GroupSerializer, CustomerSerializer, LawyerSerializer, ContractSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -17,3 +18,24 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class CustomerViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
+
+class LawyerViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Lawyer.objects.all()
+    serializer_class = LawyerSerializer
+
+class ContractViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Contract.objects.all()
+    serializer_class = ContractSerializer
