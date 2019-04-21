@@ -4,7 +4,7 @@ from django.db import models
 class Customer(models.Model):
 
     class Meta:
-        db_table = 'customer'
+        db_table =   'customer'
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='customer')
     phone = models.TextField(blank=True, null=True)
